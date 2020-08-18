@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topview-Recruit</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/plane.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 正面表单 -->
+        <div class="sx-form front-end show-front">
+            <!-- 敏仪：表单内容 -->
+            <div class="registration-wrapper">
+                <h1>TopView工作室报名</h1>
+                <section class="form-body">
+                  <ul class="form-body-part1">
+                    <li>
+                      <p>
+                        <label for="username">姓名</label>
+                      </p>
+                      <input type="text" id="username" placeholder="请输入姓名">
+                    </li>
+                    <li class="sex">
+                      <p>
+                        <label>性别</label>
+                      </p>
+                      <label><input type="radio" name="sex" id="male">男生</label>
+                      <label><input type="radio" name="sex" id="female">女生</label>
+                  
+                    </li>
+                    <li>
+                      <p>
+                        <label for="student-id">学号</label>
+                      </p>
+                      <input type="text" id="student-id" placeholder="请输入学号">
+                    </li>
+                    <li>
+                      <p>
+                        <label for="grade-major">年级专业</label>
+                      </p>
+                      <input type="text" id="grade-major" placeholder="请输入年级专业">
+                    </li>
+                    <li>
+                      <p>
+                        <label for="grade-major">手机号码</label>
+                      </p>
+                      <input type="text" id="number" placeholder="请输入手机号码">
+                    </li>
+                    <li>
+                      <p>
+                        <label for="academy">学院</label>
+                      </p>
+                      <select name="academy" id="academy">
+                        <option value="计算机学院">计算机学院</option>
+                        <option value="自动化学院">自动化学院</option>
+                        <option value="信息工程学院">信息工程学院</option>
+                      </select>
+                    </li>
+                    <li>
+                      <p>
+                        <label for="qq">QQ</label>
+                      </p>
+                      <input type="text" id="qq" placeholder="请输入QQ号">
+                    </li>
+                    <li>
+                      <p>
+                        <label for="direction">意向组别</label>
+                      </p>
+                      <select name="direction" id="direction">
+                        <option value="前端">前端</option>
+                        <option value="后台">后台</option>
+                        <option value="机器学习">机器学习</option>
+                      </select>
+                    </li>
+                  </ul>
+                  <ul class="form-body-part2">
+                    <li>
+                      <p>
+                        <label for="introduction">自我介绍（性格、兴趣、爱好等）</label>
+                      </p>
+                      <textarea class="introduction" ></textarea>
+                    </li>
+                    <li>
+                      <p>
+                        <label for="skills">技术技能</label>
+                      </p>
+                      <textarea class="skills" ></textarea>
+                    </li>
+                    <li>
+                      <p>
+                        <label for="email">对我们工作室的了解</label>
+                      </p>
+                      <textarea class="direction" ></textarea>
+                    </li>
+                  </ul>
+                  <button class="submit">提交</button>
+                </section>
+                
+              </div>
+            <!-- 敏仪部分结束 -->
+        </div>
+        <!-- 思贤：飞机 -->
+        <div class="plane back-end hidden-back">
+            <!-- 左翼 -->
+            <div class="left-plane">
+                <!-- 左上角折叠区域 -->
+                <div class="left-top fold"></div>
+                <!-- 左下角折叠区域 -->
+                <div class="left-bottom fold"></div>
+                <!-- 机身 -->
+                <div class="wing wing1"></div>
+                <div class="wing wing2"></div>
+            </div>
+            <!-- 右翼 -->
+            <div class="right-plane">
+                <!-- 右上角折叠区域 -->
+                <div class="right-top fold"></div>
+                <!-- 右下角折叠区域 -->
+                <div class="right-bottom fold"></div>
+                <!-- 机身 -->
+                <div class="wing wing3"></div>
+                <div class="wing wing4"></div>
+            </div>
+        </div>
+        <!-- 思贤部分结束 -->
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/sx-plane.js"></script>
+</body>
+</html>

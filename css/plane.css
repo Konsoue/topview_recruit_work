@@ -1,0 +1,263 @@
+/* 
+ * @author: 思贤
+*/
+body {
+    background: #a0ffe6;
+}
+::-webkit-scrollbar {
+    width: 10px;
+    height: 50px;
+}
+::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0);
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 18px;
+    background-color: rgba(0, 0, 0, .12);
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, .25);
+}
+.container {
+    position: fixed;
+    left: 20%;
+    width: 960px;
+    height: 630px;
+    margin: 30px auto;
+    border-radius: 8px;
+    -webkit-perspective: 800px;
+    perspective: 800px;
+    -webkit-perspective-origin: 50% 50%;
+    perspective-origin: 50% 50%;
+}
+.sx-form,
+.plane {
+    width: 960px;
+    height: 630px;
+    margin: 0 auto;
+}
+.sx-form {
+    background: #ffffdd;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.plane {
+    position: absolute; 
+    top: 0;
+}
+/*纸飞机前面*/
+/*一开始不旋转*/
+.front-end.show-front {
+    display: block;
+    transform: rotateY(0deg);
+}
+.front-end {
+    position: relative;
+    /* display: none; */
+    /* 沿Y轴旋转180° */
+    transform: rotateY(180deg);
+    transition: all 1s linear ;
+    backface-visibility: hidden;
+}
+/* 纸飞机后面 */
+.back-end {
+    position: absolute;
+    perspective: 600px;
+    perspective-origin: 200px 131px;
+    transition: all 1s linear;
+    backface-visibility: hidden;
+    /* background: aqua; */
+}
+
+/* 一开始不显示飞机 */
+.back-end.hidden-back {
+    transform: rotateY(-180deg);
+    /* transform: scale(0.4); */
+}
+/* 形成点角度 */
+.back-end.turn {
+    transform: rotate3d(1, 1, 1, 22deg);
+}
+/* 飞机的左右两边公共样式 */
+.hidden-back .left-plane,
+.hidden-back .right-plane {
+    display: none;
+}
+.left-plane,
+.right-plane {
+    position: absolute;
+    top: 0;
+    display: block;
+    width: 50%;
+    height: 100%;
+    /* background: red; */
+    transition: all 2s ease-in-out;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+.left-plane {
+    left: 0;
+    transform: rotateZ(0deg);
+    /* background: red; */
+    transform-origin: 100% 50% 0;
+}
+.right-plane {
+    left: 50%;
+    transform: rotateZ(0deg);
+    transform-origin: 0% 50%;
+}
+/* 左右机身公共样式 */
+.wing {
+    position: absolute;
+    bottom: 0;
+    box-sizing: border-box;
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    border: none;
+    /* background: red; */
+    border-top: 585px solid hsla(61, 100%, 76%, 0);
+    border-bottom: 0px solid hsla(0, 100%, 84%, 0);
+    border-right: 241px solid hsl(56, 100%, 83%);
+}
+/* 绘制 飞机2D 雏形 */
+.wing1 {
+    transform-origin: 100% 100%;
+    transform: translateY(-90px) translateX(18px) rotateZ(22.2deg) skewY(-22.2deg);
+}
+.wing2 {
+    left: 252px;
+    border-right: none;
+    border-left: 238px solid hsl(56, 100%, 83%);
+    transform-origin: 100% 100%;
+    transform: translateY(0px) translateX(-11px) rotateZ(22.2deg);
+}
+.wing3 {
+    transform-origin: 0 100%;
+    transform: translateX(-1px) rotateZ(-22.5deg);
+}
+.wing4 {
+    left: 252px;
+    border-right: none;
+    border-left: 238px solid hsl(56, 100%, 83%);
+    transform: translateY(-66px) translateX(-131px) rotateZ(-22.5deg) skewY(22.5deg);
+}
+/* 绘制可折叠区域 */
+.fold {
+    position: absolute;
+    z-index: 0;
+    background-color: transparent;
+    backface-visibility: hidden;
+    transition: all 500ms linear;
+}
+.left-top.fold {
+    top: 0;
+    width: 0;
+    height: 0;
+    /* transform-origin: 0% 0%; */
+    transform-origin: 100% 100%;
+    transform: translateX(-1px) translateY(0px);
+    /* border-top: 340px solid hsla(61, 100%, 76%, 0); */
+    border-bottom: 540px solid hsla(0, 100%, 84%, 0);
+    border-left: 482px solid hsl(56, 100%, 83%);
+}
+.left-bottom.fold {
+    bottom: 0;
+    left: 0;
+    width: 259px;
+    height: 91px;
+    transform-origin: 100% 0;
+    background: hsl(56, 100%, 83%);
+    transition-delay: 1200ms;
+}
+.right-top.fold {
+    right: 0;
+    transform-origin: 0% 100%;
+    transform: translateX(-1px) translateY(0px);
+    border-bottom: 540px solid hsla(0, 100%, 84%, 0);
+    border-right: 482px solid hsl(56, 100%, 83%);
+    transition-delay: 600ms;
+}
+.right-bottom.fold {
+    bottom: 0;
+    right: 0.5px;
+    width: 259px;
+    height: 91px;
+    transform-origin: 0% 0%;
+    background: hsl(56, 100%, 83%);
+    transition-delay: 1600ms;
+}
+/* 补全 折叠尾翼 剩余的三角区域 */
+.left-bottom.fold::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 259px;
+    border-right: 222px solid hsla(0, 100%, 84%, 0);
+    border-bottom: 91px solid hsl(56, 100%, 83%);
+}
+.right-bottom.fold::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 259px;
+    border-left: 223.5px solid hsla(0, 100%, 84%, 0);
+    border-bottom: 93px solid hsl(56, 100%, 83%);
+}
+/***************************/
+/* 此处开始配合js */
+
+/* 折叠效果——左机翼、左尾翼 */
+.left-top.fold.curved {
+    transform: rotate3d(2, -2, 0, 90deg);
+}
+.left-bottom.fold.curved {
+    transform: rotate3d(19, 4, 0 ,-90deg);
+}
+/* 折叠效果——右机翼、右尾翼 */
+.right-top.fold.curved {
+    transform: rotate3d(2, 2, 0, 98deg);
+}
+.right-bottom.fold.curved {
+    transform: rotate3d(-19, 4 , 0, 90deg);
+}
+/* 平放整个小飞机——用js写 */
+.plane.hover {
+    transform: rotateX(54deg) rotateY(-10deg) rotateZ(25deg) scale(0.4);
+}
+/* 放平后 左侧整体倾斜(体现折叠效果) */
+.back-end.hover .left-plane {
+    transform: rotateY(5deg);
+}
+/* 放平后 右侧整体倾斜(体现折叠效果) */
+.back-end.hover .right-plane {
+    transform: rotateY(-10deg);
+}
+/* 左侧 飞机手持部位透明度减低 */
+.back-end.hover .wing2 {
+    border-left-color: hsl(57, 90%, 74%);
+}
+/* 右侧 飞机手持部位透明度减低 */
+.back-end.hover .wing3 {
+    border-right-color: hsl(57deg 57% 73%);
+}
+.plane.hover .fold.curved {
+    display: none;
+}
+
+/* 飞机后退助跑 */
+.back-end.fly_away_first {
+    /* 用js实现transform */
+    transform: translateX(-100px) translateZ(300px) rotateX(42deg) rotateY(-11deg) rotateZ(27deg) scale(0.4);
+    transition-delay: 0ms;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-out;
+}
+/* 飞机向前飞翔至消失 */
+.back-end.back-end.fly_away_first.fly_away {
+    /* 用js实现transform */
+    transform: translateX(600px) translateY(-400px) translateZ(-5000px) rotateX(66deg) rotateY(-12deg) rotateZ(36deg) scale(0.4);
+    transition: all 1.5s linear 0.5s;
+    opacity: 0;
+}
