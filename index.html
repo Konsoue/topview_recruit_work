@@ -22,32 +22,34 @@
                         <label for="username">姓名</label>
                       </p>
                       <input type="text" id="username" placeholder="请输入姓名">
+                      <p class="tip" id="name_tip">Lorem ipsum dolor sit.</p>
                     </li>
                     <li class="sex">
                       <p>
                         <label>性别</label>
                       </p>
-                      <label><input type="radio" name="sex" id="male">男生</label>
-                      <label><input type="radio" name="sex" id="female">女生</label>
-                  
+                      <label><input type="radio" name="sex" value="0" id="male">男生</label>
+                      <label><input type="radio" name="sex" value="1" id="female">女生</label>
                     </li>
                     <li>
                       <p>
                         <label for="student-id">学号</label>
                       </p>
                       <input type="text" id="student-id" placeholder="请输入学号">
+                      <p class="tip" id="studentId_tip">Lorem ipsum dolor sit.</p>
                     </li>
                     <li>
                       <p>
                         <label for="grade-major">年级专业</label>
                       </p>
-                      <input type="text" id="grade-major" placeholder="请输入年级专业">
+                      <input type="text" id="grade-major" placeholder="如：20电子信息类(5)班">
                     </li>
                     <li>
                       <p>
                         <label for="grade-major">手机号码</label>
                       </p>
-                      <input type="text" id="number" placeholder="请输入手机号码">
+                      <input type="text" id="phone" placeholder="请输入手机号码">
+                      <p class="tip" id="phone_tip">Lorem ipsum dolor sit.</p>
                     </li>
                     <li>
                       <p>
@@ -129,5 +131,6 @@
     </div>
     <script src="js/jquery.min.js"></script>
     <script src="js/sx-plane.js"></script>
+    <script src="js/check.js"></script>
 </body>
 </html>

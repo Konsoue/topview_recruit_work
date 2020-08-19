@@ -7,7 +7,6 @@ body {
 	height: 100%;
 	background-image: url(../img/bg.jpg);
   background-size: 238%;
-  
 } */
 .registration-wrapper {
   width: 960px;
@@ -92,4 +91,16 @@ select {
   outline: 0;
   font-size: 16px;
   margin: 0 auto;
+}
+.form-body-part1 li {
+  position: relative;
+}
+.tip {
+  display: none;
+  position: absolute;
+  left: 4px;
+  bottom: -25px;
+  color: red;
+  font-size: 14px;
+  /* background: skyblue; */
 }
