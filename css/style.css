@@ -63,25 +63,22 @@ input[type="text"] {
   top: -10px;
   left: 10px;
 }
-#email {
-  width: 96%;
-}
 textarea {
   resize: none;
   width: 99%;
   height: 100px;
   border: 1px solid rgb(128, 128, 128,0.4);
-  font-size: 15px;
   line-height: 20px;
   color: black;
   border-radius: 5px;
+  text-indent: 10px;
 }
 select {
   width: 271px;
   height: 37px;
   border: 1px solid rgb(128, 128, 128,0.4);
   border-radius: 5px;
-}
+} 
 .submit {
   width: 100px;
   height: 40px;
@@ -92,6 +89,7 @@ select {
   font-size: 16px;
   margin: 0 auto;
 }
+
 .form-body-part1 li {
   position: relative;
 }
@@ -103,4 +101,71 @@ select {
   color: red;
   font-size: 14px;
   /* background: skyblue; */
+
+
+/*提示语的样式*/
+.notice {
+  color: rgb(236, 101, 101);
+  font-size: 12px;
+}
+/*提示语隐藏*/
+.qq_tip,
+.intro_tip,
+.skills_tip,
+.impress_tip {
+  opacity: 0;
+}
+
+
+/*学院下拉框*/
+.academy,
+.direction {
+  position: relative;
+  width: 271px;
+  height: 37px;
+  line-height: 37px;
+  text-indent: 10px;
+  border: 1px solid rgb(128, 128, 128,0.4);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background-color: white;
+}
+.academy_down,
+.direction_down {
+  position: absolute;
+  right: 7px;
+  top: 16px;
+  z-index: 10;
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 7px solid rgb(128, 128, 128,0.8);
+}
+.academy_list,
+.direction_list {
+  position: absolute;
+  top: 38px;
+  left: -1px;
+  width:  271px;
+  border: 1px solid #cccccc;
+  background-color: #fff;
+  border-top: 0;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  z-index: 11;
+  display: none;
+}
+.academy_list ul li,
+.direction_lsit ul li {
+  width: 100%;
+  height: 36px;
+  cursor: pointer;
+  line-height: 30px;
+  text-indent: 10px;
+}
+.academy_list li:hover,
+.direction_lsit li:hover {
+  background-color: rgb(204, 204, 204,0.4);
+
 }

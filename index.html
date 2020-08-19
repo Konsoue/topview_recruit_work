@@ -42,7 +42,8 @@
                       <p>
                         <label for="grade-major">年级专业</label>
                       </p>
-                      <input type="text" id="grade-major" placeholder="如：20电子信息类(5)班">
+                      <input type="text" id="grade-major" placeholder="例：20计算机类(5)班">
+
                     </li>
                     <li>
                       <p>
@@ -53,49 +54,66 @@
                     </li>
                     <li>
                       <p>
-                        <label for="academy">学院</label>
+                        <label>学院</label>
                       </p>
-                      <select name="academy" id="academy">
-                        <option value="计算机学院">计算机学院</option>
-                        <option value="自动化学院">自动化学院</option>
-                        <option value="信息工程学院">信息工程学院</option>
-                      </select>
+                      <div class="academy">
+                        <div class="academy_selected">请选择</div>
+                        <span class="academy_down"></span>
+                        <div class="academy_list">
+                          <ul>
+                            <li>计算机学院</li>
+                            <li>自动化学院</li>
+                            <li>信息工程学院</li>
+                          </ul>
+                        </div>
+                      </div>
                     </li>
                     <li>
                       <p>
                         <label for="qq">QQ</label>
                       </p>
                       <input type="text" id="qq" placeholder="请输入QQ号">
+                      <p class="qq_tip notice">不是吧阿Sir，QQ号都不会写?</p>
                     </li>
                     <li>
                       <p>
-                        <label for="direction">意向组别</label>
+                        <label>意向组别</label>
                       </p>
-                      <select name="direction" id="direction">
-                        <option value="前端">前端</option>
-                        <option value="后台">后台</option>
-                        <option value="机器学习">机器学习</option>
-                      </select>
+                      <div class="direction">
+                        <div class="direction_selected">请选择</div>
+                        <span class="direction_down"></span>
+                        <div class="direction_list">
+                          <ul>
+                            <li>前端</li>
+                            <li>后台</li>
+                            <li>机器学习</li>
+                          </ul>
+                        </div>
+                      </div>
                     </li>
                   </ul>
+
                   <ul class="form-body-part2">
                     <li>
                       <p>
-                        <label for="introduction">自我介绍（性格、兴趣、爱好等）</label>
+                        <label>自我介绍（性格、兴趣、爱好等）</label>
                       </p>
-                      <textarea class="introduction" ></textarea>
+                      <textarea class="introduction" placeholder="限1000字内" maxlength="1000"></textarea>
+                      <p class="intro_tip notice">不管是开朗活泼，还是文静内秀，我们都喜欢哟！</p>
                     </li>
                     <li>
                       <p>
-                        <label for="skills">技术技能</label>
+                        <label>技术技能</label>
                       </p>
-                      <textarea class="skills" ></textarea>
+                      <textarea class="skills" placeholder="限1000字内" maxlength="1000"></textarea>
+                      <p class="skills_tip notice">要清楚自己的优势噢，实在不行就吹吹水嘛~</p>
                     </li>
                     <li>
                       <p>
-                        <label for="email">对我们工作室的了解</label>
+                        <label>对我们工作室的了解</label>
                       </p>
-                      <textarea class="direction" ></textarea>
+                      <textarea class="impression" placeholder="限1000字内" maxlength="1000"></textarea>
+                      <p class="impress_tip notice">考验你吹水能力的时候到了，冲冲冲！</p>
                     </li>
                   </ul>
                   <button class="submit">提交</button>
