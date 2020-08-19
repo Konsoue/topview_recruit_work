@@ -7,7 +7,6 @@ body {
 	height: 100%;
 	background-image: url(../img/bg.jpg);
   background-size: 238%;
-  
 } */
 .registration-wrapper {
   width: 960px;
@@ -91,6 +90,19 @@ select {
   margin: 0 auto;
 }
 
+.form-body-part1 li {
+  position: relative;
+}
+.tip {
+  display: none;
+  position: absolute;
+  left: 4px;
+  bottom: -25px;
+  color: red;
+  font-size: 14px;
+  /* background: skyblue; */
+
+
 /*提示语的样式*/
 .notice {
   color: rgb(236, 101, 101);
@@ -155,4 +167,5 @@ select {
 .academy_list li:hover,
 .direction_lsit li:hover {
   background-color: rgb(204, 204, 204,0.4);
+
 }
