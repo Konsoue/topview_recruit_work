@@ -68,7 +68,19 @@ function checkPhone() {
   }
 }
 
-
+/* 
+ *@author:思贤
+ *@function: 判断专业班级是否为空
+ *@params
+*/
+function checkClazz() {
+  if ($(this).val()) {
+    $("#grade_tip").hide();
+    user_data.clazz = $(this).val();
+  }else {
+    $("#grade_tip").text("您是究竟何方圣神？").show();
+  }
+}
 
 
   
@@ -214,7 +226,7 @@ $("input[name='sex']").change(function(){
 })
 
 $("#grade-major").on("blur",function(){
-  user_data.clazz = $(this).val();
+  checkClazz.call(this);
 })
 
 

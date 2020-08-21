@@ -1,3 +1,5 @@
+
+
 @media (min-width: 768px) and (max-width: 992px) {
   div.sm-container {
     position: static;
@@ -17,6 +19,7 @@
   }
 
 }
+
 h1 {
   font-size: 25px;
   margin-bottom: 25px;
@@ -84,21 +87,30 @@ textarea {
   border-radius: 10px;
   outline: 0;
   font-size: 16px;
-  margin: 0 auto;
+  margin: 0 auto 20px;
 }
+/* 思贤部分开始 */
 
+.form-body-part1 .tip,
+.form-body-part2 .tip {
+  display: none;
+}
 .form-body-part1 li {
   position: relative;
 }
+.form-body-part1 li span {
+  display: block;
+}
 .tip {
-  display: none;
+  display: inline-block;
   position: absolute;
-  left: 4px;
+  /* left: 18px; */
   bottom: -25px;
-  color: red;
-  font-size: 14px;
+  color: rgb(236, 101, 101);
+  font-size: 12px;
   /* background: skyblue; */
 }
+/* 思贤部分结束 */
 
 /*提示语的样式*/
 .notice {

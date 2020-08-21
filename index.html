@@ -23,44 +23,44 @@
         <section class="form-body">
           <ul class="form-body-part1">
               <li>
-                <p>
-                  <label for="username">姓名</label>
-                </p>
-                <input type="text" id="username" placeholder="请输入姓名">
-                <p class="tip" id="name_tip">Lorem ipsum dolor sit.</p>
+                <label for="username">
+                  <span>姓名：</span>
+                  <input type="text" id="username" placeholder="请输入姓名">
+                  <p class="tip" id="name_tip">Lorem ipsum dolor sit.</p>
+                </label>  
               </li>
               <li class="sex">
-                <p>
-                  <label>性别</label>
-                </p>
+                <span>
+                  <label>性别：</label>
+                </span>
                 <label><input type="radio" name="sex" value="0" id="male">男生</label>
                 <label><input type="radio" name="sex" value="1" id="female">女生</label>
               </li>
               <li>
-                <p>
-                  <label for="student-id">学号</label>
-                </p>
+                <span>
+                  <label for="student-id">学号：</label>
+                </span>
                 <input type="text" id="student-id" placeholder="请输入学号">
                 <p class="tip" id="studentId_tip">Lorem ipsum dolor sit.</p>
               </li>
               <li>
-                <p>
-                  <label for="grade-major">年级专业</label>
-                </p>
+                <span>
+                  <label for="grade-major">专业：</label>
+                </span>
                 <input type="text" id="grade-major" placeholder="例：20计算机类(5)班">
-
+                <p class="tip" id="grade_tip">Lorem ipsum dolor sit.</p>
               </li>
               <li>
-                <p>
-                  <label for="grade-major">手机号码</label>
-                </p>
+                <span>
+                  <label for="grade-major">手机：</label>
+                </span>
                 <input type="text" id="phone" placeholder="请输入手机号码">
                 <p class="tip" id="phone_tip">Lorem ipsum dolor sit.</p>
               </li>
               <li>
-                <p>
-                  <label>学院</label>
-                </p>
+                <span>
+                  <label>学院：</label>
+                </span>
                 <div class="academy">
                   <div class="academy_selected">请选择</div>
                   <span class="academy_down"></span>
@@ -74,16 +74,16 @@
                 </div>
               </li>
               <li>
-                <p>
-                  <label for="qq">QQ</label>
-                </p>
+                <span>
+                  <label for="qq">QQ：</label>
+                </span>
                 <input type="text" id="qq" placeholder="请输入QQ号">
                 <p class="qq_tip notice">不是吧阿Sir，QQ号都不会写?</p>
               </li>
               <li>
-                <p>
-                  <label>意向组别</label>
-                </p>
+                <span>
+                  <label>意向组别：</label>
+                </span>
                 <div class="direction">
                   <div class="direction_selected">请选择</div>
                   <span class="direction_down"></span>
@@ -121,7 +121,7 @@
                 <p class="impress_tip notice">考验你吹水能力的时候到了，冲冲冲！</p>
               </li>
             </ul>
-            <button class="submit">提交</button>
+            <p style="text-align: center;"><button class="submit">提交</button></p>
         </section>
 
 
