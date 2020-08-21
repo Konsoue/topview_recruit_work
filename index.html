@@ -24,43 +24,42 @@
           <ul class="form-body-part1">
               <li>
                 <label for="username">
-                  <span>姓名：</span>
-                  <input type="text" id="username" placeholder="请输入姓名">
+                  <span class="label">姓名：</span>
+                  <input type="text" id="username" autocomplete="off">
                   <p class="tip" id="name_tip">Lorem ipsum dolor sit.</p>
                 </label>  
               </li>
               <li class="sex">
-                <span>
-                  <label>性别：</label>
-                </span>
-                <label><input type="radio" name="sex" value="0" id="male">男生</label>
-                <label><input type="radio" name="sex" value="1" id="female">女生</label>
+                <div class="sex_wrapper">
+                  <span>
+                    <label>性别</label>
+                  </span>
+                  <label><input type="radio" name="sex" value="0" id="male">男生</label>
+                  <label><input type="radio" name="sex" value="1" id="female">女生</label>
+                </div>
               </li>
               <li>
-                <span>
+                <span class="label">
                   <label for="student-id">学号：</label>
                 </span>
-                <input type="text" id="student-id" placeholder="请输入学号">
+                <input type="text" id="student-id">
                 <p class="tip" id="studentId_tip">Lorem ipsum dolor sit.</p>
               </li>
               <li>
-                <span>
-                  <label for="grade-major">专业：</label>
+                <span class="label">
+                  <label for="grade-major">年级专业</label>
                 </span>
-                <input type="text" id="grade-major" placeholder="例：20计算机类(5)班">
-                <p class="tip" id="grade_tip">Lorem ipsum dolor sit.</p>
+                <input type="text" id="grade-major"autocomplete="off">
+                <p class="grade_tip">例：20计算机类(5)班</p>
               </li>
               <li>
-                <span>
-                  <label for="grade-major">手机：</label>
+                <span class="label">
+                  <label for="grade-major">手机号码</label>
                 </span>
-                <input type="text" id="phone" placeholder="请输入手机号码">
+                <input type="text" id="phone"autocomplete="off">
                 <p class="tip" id="phone_tip">Lorem ipsum dolor sit.</p>
               </li>
               <li>
-                <span>
-                  <label>学院：</label>
-                </span>
                 <div class="academy">
                   <div class="academy_selected">请选择所在学院</div>
                   <span class="academy_down"></span>
@@ -74,16 +73,13 @@
                 </div>
               </li>
               <li>
-                <span>
+                <span class="label">
                   <label for="qq">QQ：</label>
                 </span>
-                <input type="text" id="qq" placeholder="请输入QQ号">
+                <input type="text" id="qq" autocomplete="off">
                 <p class="qq_tip notice">不是吧阿Sir，QQ号都不会写?</p>
               </li>
               <li>
-                <span>
-                  <label>意向组别：</label>
-                </span>
                 <div class="direction">
                   <div class="direction_selected">请选择意向组别</div>
                   <span class="direction_down"></span>
