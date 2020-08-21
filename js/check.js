@@ -1,4 +1,3 @@
-
 let user_data = {
   name: undefined,
   sex: undefined,
@@ -237,3 +236,19 @@ $("#grade-major").on("blur",function(){
 //   }
 // })
 // 思贤部分结束
+
+
+/* 
+ *@author: 敏仪
+ *@function: label样式
+ *@params
+*/
+const $input = $('input');
+$input.on("focus",function () {
+  $(this).siblings('.label').css("top","-25%");
+})
+$input.on("blur",function () {
+  if($(this).val() == '') {
+    $(this).siblings('.label').css("top","20%");
+  }
+})
