@@ -1,17 +1,21 @@
-/* html {
-  width: 100%;
-	height: 100%;
-}
-body {
-	width: 100%;
-	height: 100%;
-	background-image: url(../img/bg.jpg);
-  background-size: 238%;
-} */
-.registration-wrapper {
-  width: 960px;
-  margin: 0 auto 30px;
-  padding-top: 10px;
+@media (min-width: 768px) and (max-width: 992px) {
+  div.sm-container {
+    position: static;
+    width: 100%;
+    height: auto;
+    margin: auto;
+  }
+  div.front-end {
+    width: 100%;
+  }
+  div.registration-wrapper {
+    width: 100%;
+  }
+  ul.form-body-part1,
+  ul.form-body-part2 {
+    grid-column-gap: 150px;
+  }
+
 }
 h1 {
   font-size: 25px;
@@ -36,7 +40,6 @@ h1 {
 }
 .form-body-part2 {
   grid-template-columns: 1fr;
-  
 }
 .form-body p {
   margin-bottom: 5px;
@@ -65,7 +68,7 @@ input[type="text"] {
 }
 textarea {
   resize: none;
-  width: 99%;
+  width: 100%;
   height: 100px;
   border: 1px solid rgb(128, 128, 128,0.4);
   line-height: 20px;
@@ -73,12 +76,6 @@ textarea {
   border-radius: 5px;
   text-indent: 10px;
 }
-select {
-  width: 271px;
-  height: 37px;
-  border: 1px solid rgb(128, 128, 128,0.4);
-  border-radius: 5px;
-} 
 .submit {
   width: 100px;
   height: 40px;
@@ -121,7 +118,7 @@ select {
 .academy,
 .direction {
   position: relative;
-  width: 271px;
+  width: 250px;
   height: 37px;
   line-height: 37px;
   text-indent: 10px;
@@ -145,9 +142,9 @@ select {
 .academy_list,
 .direction_list {
   position: absolute;
-  top: 38px;
+  top: 36px;
   left: -1px;
-  width:  271px;
+  width:  250px;
   border: 1px solid #cccccc;
   background-color: #fff;
   border-top: 0;
@@ -165,7 +162,6 @@ select {
   text-indent: 10px;
 }
 .academy_list li:hover,
-.direction_lsit li:hover {
+.direction_list li:hover {
   background-color: rgb(204, 204, 204,0.4);
-
 }

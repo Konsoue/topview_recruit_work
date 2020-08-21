@@ -1,154 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Topview-Recruit</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/plane.css">
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Topview-Recruit</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/plane.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    <div class="container">
-        <!-- 正面表单 -->
-        <div class="sx-form front-end show-front">
-            <!-- 敏仪：表单内容 -->
-            <div class="registration-wrapper">
-                <h1>TopView工作室报名</h1>
-                <section class="form-body">
-                  <ul class="form-body-part1">
-                    <li>
-                      <p>
-                        <label for="username">姓名</label>
-                      </p>
-                      <input type="text" id="username" placeholder="请输入姓名">
-                      <p class="tip" id="name_tip">Lorem ipsum dolor sit.</p>
-                    </li>
-                    <li class="sex">
-                      <p>
-                        <label>性别</label>
-                      </p>
-                      <label><input type="radio" name="sex" value="0" id="male">男生</label>
-                      <label><input type="radio" name="sex" value="1" id="female">女生</label>
-                    </li>
-                    <li>
-                      <p>
-                        <label for="student-id">学号</label>
-                      </p>
-                      <input type="text" id="student-id" placeholder="请输入学号">
-                      <p class="tip" id="studentId_tip">Lorem ipsum dolor sit.</p>
-                    </li>
-                    <li>
-                      <p>
-                        <label for="grade-major">年级专业</label>
-                      </p>
-                      <input type="text" id="grade-major" placeholder="例：20计算机类(5)班">
+  <div class="sx-container sm-container">
+    <!-- 正面表单 -->
+    <div class="sx-form front-end show-front">
+      <!-- 敏仪：表单内容 -->
+      <div class="registration-wrapper container">
+        <h1>TopView工作室报名</h1>
 
-                    </li>
-                    <li>
-                      <p>
-                        <label for="grade-major">手机号码</label>
-                      </p>
-                      <input type="text" id="phone" placeholder="请输入手机号码">
-                      <p class="tip" id="phone_tip">Lorem ipsum dolor sit.</p>
-                    </li>
-                    <li>
-                      <p>
-                        <label>学院</label>
-                      </p>
-                      <div class="academy">
-                        <div class="academy_selected">请选择</div>
-                        <span class="academy_down"></span>
-                        <div class="academy_list">
-                          <ul>
-                            <li>计算机学院</li>
-                            <li>自动化学院</li>
-                            <li>信息工程学院</li>
-                          </ul>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <p>
-                        <label for="qq">QQ</label>
-                      </p>
-                      <input type="text" id="qq" placeholder="请输入QQ号">
-                      <p class="qq_tip notice">不是吧阿Sir，QQ号都不会写?</p>
-                    </li>
-                    <li>
-                      <p>
-                        <label>意向组别</label>
-                      </p>
-                      <div class="direction">
-                        <div class="direction_selected">请选择</div>
-                        <span class="direction_down"></span>
-                        <div class="direction_list">
-                          <ul>
-                            <li>前端</li>
-                            <li>后台</li>
-                            <li>机器学习</li>
-                          </ul>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
+        <section class="form-body">
+          <ul class="form-body-part1">
+              <li>
+                <p>
+                  <label for="username">姓名</label>
+                </p>
+                <input type="text" id="username" placeholder="请输入姓名">
+                <p class="tip" id="name_tip">Lorem ipsum dolor sit.</p>
+              </li>
+              <li class="sex">
+                <p>
+                  <label>性别</label>
+                </p>
+                <label><input type="radio" name="sex" value="0" id="male">男生</label>
+                <label><input type="radio" name="sex" value="1" id="female">女生</label>
+              </li>
+              <li>
+                <p>
+                  <label for="student-id">学号</label>
+                </p>
+                <input type="text" id="student-id" placeholder="请输入学号">
+                <p class="tip" id="studentId_tip">Lorem ipsum dolor sit.</p>
+              </li>
+              <li>
+                <p>
+                  <label for="grade-major">年级专业</label>
+                </p>
+                <input type="text" id="grade-major" placeholder="例：20计算机类(5)班">
 
-                  <ul class="form-body-part2">
-                    <li>
-                      <p>
-                        <label>自我介绍（性格、兴趣、爱好等）</label>
-                      </p>
-                      <textarea class="introduction" placeholder="限1000字内" maxlength="1000"></textarea>
-                      <p class="intro_tip notice">不管是开朗活泼，还是文静内秀，我们都喜欢哟！</p>
-                    </li>
-                    <li>
-                      <p>
-                        <label>技术技能</label>
-                      </p>
-                      <textarea class="skills" placeholder="限1000字内" maxlength="1000"></textarea>
-                      <p class="skills_tip notice">要清楚自己的优势噢，实在不行就吹吹水嘛~</p>
-                    </li>
-                    <li>
-                      <p>
-                        <label>对我们工作室的了解</label>
-                      </p>
-                      <textarea class="impression" placeholder="限1000字内" maxlength="1000"></textarea>
-                      <p class="impress_tip notice">考验你吹水能力的时候到了，冲冲冲！</p>
-                    </li>
-                  </ul>
-                  <button class="submit">提交</button>
-                </section>
-                
-              </div>
-            <!-- 敏仪部分结束 -->
-        </div>
-        <!-- 思贤：飞机 -->
-        <div class="plane back-end hidden-back">
-            <!-- 左翼 -->
-            <div class="left-plane">
-                <!-- 左上角折叠区域 -->
-                <div class="left-top fold"></div>
-                <!-- 左下角折叠区域 -->
-                <div class="left-bottom fold"></div>
-                <!-- 机身 -->
-                <div class="wing wing1"></div>
-                <div class="wing wing2"></div>
-            </div>
-            <!-- 右翼 -->
-            <div class="right-plane">
-                <!-- 右上角折叠区域 -->
-                <div class="right-top fold"></div>
-                <!-- 右下角折叠区域 -->
-                <div class="right-bottom fold"></div>
-                <!-- 机身 -->
-                <div class="wing wing3"></div>
-                <div class="wing wing4"></div>
-            </div>
-        </div>
-        <!-- 思贤部分结束 -->
+              </li>
+              <li>
+                <p>
+                  <label for="grade-major">手机号码</label>
+                </p>
+                <input type="text" id="phone" placeholder="请输入手机号码">
+                <p class="tip" id="phone_tip">Lorem ipsum dolor sit.</p>
+              </li>
+              <li>
+                <p>
+                  <label>学院</label>
+                </p>
+                <div class="academy">
+                  <div class="academy_selected">请选择</div>
+                  <span class="academy_down"></span>
+                  <div class="academy_list">
+                    <ul>
+                      <li>计算机学院</li>
+                      <li>自动化学院</li>
+                      <li>信息工程学院</li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <p>
+                  <label for="qq">QQ</label>
+                </p>
+                <input type="text" id="qq" placeholder="请输入QQ号">
+                <p class="qq_tip notice">不是吧阿Sir，QQ号都不会写?</p>
+              </li>
+              <li>
+                <p>
+                  <label>意向组别</label>
+                </p>
+                <div class="direction">
+                  <div class="direction_selected">请选择</div>
+                  <span class="direction_down"></span>
+                  <div class="direction_list">
+                    <ul>
+                      <li>前端</li>
+                      <li>后台</li>
+                      <li>机器学习</li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+            </ul>
+
+            <ul class="form-body-part2">
+              <li>
+                <p>
+                  <label>自我介绍（性格、兴趣、爱好等）</label>
+                </p>
+                <textarea class="introduction" placeholder="限1000字内" maxlength="1000"></textarea>
+                <p class="intro_tip notice">不管是开朗活泼，还是文静内秀，我们都喜欢哟！</p>
+              </li>
+              <li>
+                <p>
+                  <label>技术技能</label>
+                </p>
+                <textarea class="skills" placeholder="限1000字内" maxlength="1000"></textarea>
+                <p class="skills_tip notice">要清楚自己的优势噢，实在不行就吹吹水嘛~</p>
+              </li>
+              <li>
+                <p>
+                  <label>对我们工作室的了解</label>
+                </p>
+                <textarea class="impression" placeholder="限1000字内" maxlength="1000"></textarea>
+                <p class="impress_tip notice">考验你吹水能力的时候到了，冲冲冲！</p>
+              </li>
+            </ul>
+            <button class="submit">提交</button>
+        </section>
+
+
+
+      </div>
+      <!-- 敏仪部分结束 -->
     </div>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/sx-plane.js"></script>
-    <script src="js/check.js"></script>
+    <!-- 思贤：飞机 -->
+    <div class="plane back-end hidden-back">
+      <!-- 左翼 -->
+      <div class="left-plane">
+        <!-- 左上角折叠区域 -->
+        <div class="left-top fold"></div>
+        <!-- 左下角折叠区域 -->
+        <div class="left-bottom fold"></div>
+        <!-- 机身 -->
+        <div class="wing wing1"></div>
+        <div class="wing wing2"></div>
+      </div>
+      <!-- 右翼 -->
+      <div class="right-plane">
+        <!-- 右上角折叠区域 -->
+        <div class="right-top fold"></div>
+        <!-- 右下角折叠区域 -->
+        <div class="right-bottom fold"></div>
+        <!-- 机身 -->
+        <div class="wing wing3"></div>
+        <div class="wing wing4"></div>
+      </div>
+    </div>
+    <!-- 思贤部分结束 -->
+  </div>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/sx-plane.js"></script>
+  <script src="js/check.js"></script>
 </body>
+
 </html>
