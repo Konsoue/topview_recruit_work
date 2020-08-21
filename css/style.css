@@ -1,3 +1,5 @@
+
+
 @media (min-width: 768px) and (max-width: 992px) {
   div.sm-container {
     position: static;
@@ -16,6 +18,7 @@
     grid-column-gap: 150px;
   }
 }
+
 h1 {
   font-size: 25px;
   margin-bottom: 25px;
@@ -107,28 +110,47 @@ textarea {
   border-radius: 10px;
   outline: 0;
   font-size: 16px;
-  margin: 0 auto 10px;
+  margin: 0 auto 20px;
 }
+/* 思贤部分开始 */
 
+.form-body-part1 .tip,
+.form-body-part2 .tip {
+  display: none;
+}
 .form-body-part1 li {
   position: relative;
+}
+
+.form-body-part1 li span {
+  display: block;
 }
 .sex_wrapper {
   margin-top: 10px;
   margin-bottom: 10px;
   color: #186091;
+
 }
 .tip {
-  display: none;
+  display: inline-block;
   position: absolute;
-  left: 4px;
+  /* left: 18px; */
+  bottom: -25px;
+  color: rgb(236, 101, 101);
+  font-size: 12px;
+  /* background: skyblue; */
+}
+/* 思贤部分结束 */
+
+  /* left: 4px;
   color: #3282b8;
   font-size: 12px;
-} 
+}  */
+
 
 /*提示语的样式*/
 .notice {
-  color: #3282b8;
+  color: rgb(236, 101, 101);
   font-size: 12px;
 }
 /*提示语隐藏*/

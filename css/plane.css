@@ -1,9 +1,52 @@
 /* 
  * @author: 思贤
 */
-/* body {
+@media screen and (max-width:768px) {
+    div.sx-container {
+      position: static;
+      width: 100%;
+      height: auto;
+      margin: 0 auto;
+    }
+    div.sx-form {
+      width: 100%;
+      height: auto;
+    }
+    div.registration-wrapper {
+      width: 100%;
+    }
+    section.form-body {
+      display: block;
+    }
+    ul.form-body-part1,
+    ul.form-body-part2 {
+      display: block;
+    }
+    .form-body-part1 li {
+      position: relative;
+      margin-bottom: 25px;
+    }
+    .form-body-part1 .academy {
+      display: inline-block;
+    }
+    .form-body-part1 .direction {
+      display: inline-block;
+      width: 215px;
+    }
+    .direction .direction_list {
+      width: 215px;
+    }
+    ul.form-body-part1 li span {
+        display: inline-block;
+    }
+    .form-body-part1 .tip,
+    .form-body-part2 .tip {
+      text-indent: 4.5em;
+    }
+}
+body {
     background: #a0ffe6;
-} */
+} 
 ::-webkit-scrollbar {
     width: 10px;
     height: 50px;
@@ -18,26 +61,27 @@
 ::-webkit-scrollbar-thumb:hover {
     background-color: rgba(0, 0, 0, .25);
 }
-/* .container {
+.sx-container {
     position: fixed;
     width: 100%;
     height: 100%;
+    /* margin: 30px auto; */
+    overflow: hidden;
     border-radius: 8px;
     -webkit-perspective: 800px;
     perspective: 800px;
     -webkit-perspective-origin: 50% 50%;
     perspective-origin: 50% 50%;
-} */
-.sx-form,
-.plane {
-    width: 100%;
 }
-.sx-form {
-    /* background: linear-gradient(#3282b8, #bbe1fa); */
-   background-color: #bbe1fa;
+.sx-form{
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    background: linear-gradient(#3282b8, #bbe1fa);
     overflow-y: scroll;
     overflow-x: hidden;
 }
+
 .plane {
     position: absolute; 
     top: 0;
