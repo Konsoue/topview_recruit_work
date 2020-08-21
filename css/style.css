@@ -15,13 +15,13 @@
   ul.form-body-part2 {
     grid-column-gap: 150px;
   }
-
 }
 h1 {
   font-size: 25px;
   margin-bottom: 25px;
   margin-top: 15px;
   text-align: center;
+  color: #186091;
 }
 .form-body {
   display: grid;
@@ -47,62 +47,88 @@ h1 {
 input[type="text"] {
   width: 250px;
   padding: 10px;
-  background-color: #fff;
-  border: 1px solid rgb(128, 128, 128,0.4);
-  border-radius: 2px;
-  outline: 0;
-  border-radius: 5px;
+  background-color: #bbe1fa;
+  border: none;
+  outline: none;
+  color: #1b262c;
+  border-bottom: .1rem solid #f4eeff;
+}
+.form-body-part1 li,
+.form-body-part2 li{
+  position: relative;
+}
+.form-body-part1 li .label {
+  position: absolute;
+  top: 20%; 
+  color: #186091;
+  font-size: 16px;
+  font-weight: 400;
+}
+.academy_label {
+  color: #186091;
+  font-size: 16px;
+  font-weight: 400;
+}
+.textarea_label {
+  color: #186091;
+}
+.direction_selected,
+.academy_selected {
+  color: #186091;
+  font-size: 16px;
+  font-weight: 400;
 }
  input[type="radio"] {
    width: 20px;
    margin-top: 10px;
-  
+}
+.female {
+  left: -20px;
 }
 .sex {
   justify-self: start;
-}
-#username-lable {
-  position: absolute;
-  top: -10px;
-  left: 10px;
 }
 textarea {
   resize: none;
   width: 100%;
   height: 100px;
-  border: 1px solid rgb(128, 128, 128,0.4);
   line-height: 20px;
-  color: black;
-  border-radius: 5px;
+  border: none;
+  color: #1b262c;
   text-indent: 10px;
+  background-color: #f4eeff;
+  
 }
 .submit {
   width: 100px;
   height: 40px;
-  background-color: rgba(46, 185, 240, 0.8);
+  background-color: rgba(123, 184, 224);
   color: rgb(255, 255, 255);
   border-radius: 10px;
   outline: 0;
   font-size: 16px;
-  margin: 0 auto;
+  margin: 0 auto 10px;
 }
 
 .form-body-part1 li {
   position: relative;
 }
+.sex_wrapper {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #186091;
+}
 .tip {
   display: none;
   position: absolute;
   left: 4px;
-  bottom: -25px;
-  color: red;
-  font-size: 14px;
-  /* background: skyblue; */
-}
+  color: #3282b8;
+  font-size: 12px;
+} 
 
 /*提示语的样式*/
 .notice {
-  color: rgb(236, 101, 101);
+  color: #3282b8;
   font-size: 12px;
 }
 /*提示语隐藏*/
@@ -112,20 +138,22 @@ textarea {
 .impress_tip {
   opacity: 0;
 }
-
+.grade_tip {
+  color: #3282b8;
+  font-size: 12px;
+  padding-left: 4px;
+}
 
 /*学院下拉框*/
 .academy,
 .direction {
   position: relative;
   width: 250px;
-  height: 37px;
+  height: 42px;
   line-height: 37px;
   text-indent: 10px;
-  border: 1px solid rgb(128, 128, 128,0.4);
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  background-color: white;
+  border-bottom: .1rem solid #f4eeff;
+  background-color: #bbe1fa;
 }
 .academy_down,
 .direction_down {
@@ -137,7 +165,7 @@ textarea {
   height: 0;
   border-left: 7px solid transparent;
   border-right: 7px solid transparent;
-  border-top: 7px solid rgb(128, 128, 128,0.8);
+  border-top: 7px solid #3282b8;
 }
 .academy_list,
 .direction_list {
@@ -145,8 +173,8 @@ textarea {
   top: 36px;
   left: -1px;
   width:  250px;
-  border: 1px solid #cccccc;
-  background-color: #fff;
+  border: 1px solid #f4eeff;
+  background-color: #bbe1fa;
   border-top: 0;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
@@ -154,14 +182,15 @@ textarea {
   display: none;
 }
 .academy_list ul li,
-.direction_lsit ul li {
+.direction_list ul li {
   width: 100%;
   height: 36px;
   cursor: pointer;
   line-height: 30px;
   text-indent: 10px;
+  color: #3282b8;
 }
 .academy_list li:hover,
 .direction_list li:hover {
-  background-color: rgb(204, 204, 204,0.4);
+  background-color:#f4eeff;
 }

@@ -1,9 +1,9 @@
 /* 
  * @author: 思贤
 */
-body {
+/* body {
     background: #a0ffe6;
-}
+} */
 ::-webkit-scrollbar {
     width: 10px;
     height: 50px;
@@ -33,7 +33,8 @@ body {
     width: 100%;
 }
 .sx-form {
-    background: #ffffdd;
+    /* background: linear-gradient(#3282b8, #bbe1fa); */
+   background-color: #bbe1fa;
     overflow-y: scroll;
     overflow-x: hidden;
 }
