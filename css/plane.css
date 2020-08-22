@@ -44,8 +44,10 @@
       text-indent: 4.5em;
     }
 }
+
+
 body {
-    background: #a0ffe6;
+    background: #fffbfb;
 } 
 ::-webkit-scrollbar {
     width: 10px;
@@ -82,38 +84,44 @@ body {
     overflow-x: hidden;
 }
 
-.plane {
-    position: absolute; 
-    top: 0;
-}
 /*纸飞机前面*/
 /*一开始不旋转*/
 .front-end.show-front {
     display: block;
     transform: rotateY(0deg);
 }
+
 .front-end {
     position: relative;
-    /* display: none; */
-    /* 沿Y轴旋转180° */
-    transform: rotateY(180deg);
-    transition: all 1s linear ;
+    display: none;
+    transition: all 1s linear;
     backface-visibility: hidden;
 }
 /* 纸飞机后面 */
 .back-end {
-    position: absolute;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    width: 100%;
+    height: 100%;
     perspective: 600px;
     perspective-origin: 200px 131px;
     transition: all 1s linear;
-    backface-visibility: hidden;
-    /* background: aqua; */
+    background: rgb(96, 222, 253);
+}
+.back-end.small {
+    width: 960px;
+    height: 630px;
+    transform: scale(0.4);
+}
+.back-end.show-back {
+    transform: rotateY(0deg) scale(0.4);
+    background-color: rgba(0, 0, 0, 0);
 }
 
 /* 一开始不显示飞机 */
 .back-end.hidden-back {
-    transform: rotateY(-180deg);
-    /* transform: scale(0.4); */
+    top: -1500px;
 }
 /* 形成点角度 */
 .back-end.turn {
@@ -131,7 +139,6 @@ body {
     display: block;
     width: 50%;
     height: 100%;
-    /* background: red; */
     transition: all 2s ease-in-out;
     transform-style: preserve-3d;
     backface-visibility: hidden;
@@ -139,7 +146,6 @@ body {
 .left-plane {
     left: 0;
     transform: rotateZ(0deg);
-    /* background: red; */
     transform-origin: 100% 50% 0;
 }
 .right-plane {
@@ -157,10 +163,10 @@ body {
     padding: 0;
     margin: 0;
     border: none;
-    /* background: red; */
     border-top: 585px solid hsla(61, 100%, 76%, 0);
     border-bottom: 0px solid hsla(0, 100%, 84%, 0);
-    border-right: 241px solid hsl(56, 100%, 83%);
+    border-right: 241px solid rgb(96, 222, 253);
+    transition-delay: 1s;
 }
 /* 绘制 飞机2D 雏形 */
 .wing1 {
@@ -170,7 +176,7 @@ body {
 .wing2 {
     left: 252px;
     border-right: none;
-    border-left: 238px solid hsl(56, 100%, 83%);
+    border-left: 238px solid rgb(96, 222, 253);
     transform-origin: 100% 100%;
     transform: translateY(0px) translateX(-11px) rotateZ(22.2deg);
 }
@@ -181,7 +187,7 @@ body {
 .wing4 {
     left: 252px;
     border-right: none;
-    border-left: 238px solid hsl(56, 100%, 83%);
+    border-left: 238px solid rgb(96, 222, 253);
     transform: translateY(-66px) translateX(-131px) rotateZ(-22.5deg) skewY(22.5deg);
 }
 /* 绘制可折叠区域 */
@@ -190,18 +196,16 @@ body {
     z-index: 0;
     background-color: transparent;
     backface-visibility: hidden;
-    transition: all 500ms linear;
+    transition: all 500ms linear 700ms;
 }
 .left-top.fold {
     top: 0;
     width: 0;
     height: 0;
-    /* transform-origin: 0% 0%; */
     transform-origin: 100% 100%;
     transform: translateX(-1px) translateY(0px);
-    /* border-top: 340px solid hsla(61, 100%, 76%, 0); */
     border-bottom: 540px solid hsla(0, 100%, 84%, 0);
-    border-left: 482px solid hsl(56, 100%, 83%);
+    border-left: 482px solid rgb(96, 222, 253);
 }
 .left-bottom.fold {
     bottom: 0;
@@ -209,16 +213,16 @@ body {
     width: 259px;
     height: 91px;
     transform-origin: 100% 0;
-    background: hsl(56, 100%, 83%);
-    transition-delay: 1200ms;
+    background: rgb(96, 222, 253);
+    transition-delay: 1500ms;
 }
 .right-top.fold {
     right: 0;
     transform-origin: 0% 100%;
     transform: translateX(-1px) translateY(0px);
     border-bottom: 540px solid hsla(0, 100%, 84%, 0);
-    border-right: 482px solid hsl(56, 100%, 83%);
-    transition-delay: 600ms;
+    border-right: 482px solid rgb(96, 222, 253);
+    transition-delay: 1000ms;
 }
 .right-bottom.fold {
     bottom: 0;
@@ -226,8 +230,8 @@ body {
     width: 259px;
     height: 91px;
     transform-origin: 0% 0%;
-    background: hsl(56, 100%, 83%);
-    transition-delay: 1600ms;
+    background: rgb(96, 222, 253);
+    transition-delay: 2000ms;
 }
 /* 补全 折叠尾翼 剩余的三角区域 */
 .left-bottom.fold::after {
@@ -236,7 +240,7 @@ body {
     bottom: 0;
     left: 259px;
     border-right: 222px solid hsla(0, 100%, 84%, 0);
-    border-bottom: 91px solid hsl(56, 100%, 83%);
+    border-bottom: 91px solid rgb(96, 222, 253);
 }
 .right-bottom.fold::after {
     content: "";
@@ -244,7 +248,7 @@ body {
     bottom: 0;
     right: 259px;
     border-left: 223.5px solid hsla(0, 100%, 84%, 0);
-    border-bottom: 93px solid hsl(56, 100%, 83%);
+    border-bottom: 93px solid rgb(96, 222, 253);
 }
 /***************************/
 /* 此处开始配合js */
@@ -263,7 +267,7 @@ body {
 .right-bottom.fold.curved {
     transform: rotate3d(-19, 4 , 0, 90deg);
 }
-/* 平放整个小飞机——用js写 */
+/* 平放整个小飞机 */
 .plane.hover {
     transform: rotateX(54deg) rotateY(-10deg) rotateZ(25deg) scale(0.4);
 }
@@ -277,11 +281,11 @@ body {
 }
 /* 左侧 飞机手持部位透明度减低 */
 .back-end.hover .wing2 {
-    border-left-color: hsl(57, 90%, 74%);
+    border-left-color: rgba(128, 236, 255, 0.952);
 }
 /* 右侧 飞机手持部位透明度减低 */
 .back-end.hover .wing3 {
-    border-right-color: hsl(57deg 57% 73%);
+    border-right-color: #2cbfd3e7;
 }
 .plane.hover .fold.curved {
     display: none;
@@ -289,16 +293,51 @@ body {
 
 /* 飞机后退助跑 */
 .back-end.fly_away_first {
+    transform: rotate3d(60, 0, 36, 63deg) scale(0.5);
+}
+.back-end.fly_away_second {
     /* 用js实现transform */
-    transform: translateX(-100px) translateZ(300px) rotateX(42deg) rotateY(-11deg) rotateZ(27deg) scale(0.4);
-    transition-delay: 0ms;
+    transform: translateX(-16px) translateZ(300px) rotateX(62deg) rotateY(-1deg) rotateZ(27deg) scale(0.4);
+    transition-delay: 500ms;
     transition-duration: 0.4s;
     transition-timing-function: ease-out;
 }
 /* 飞机向前飞翔至消失 */
-.back-end.back-end.fly_away_first.fly_away {
+.back-end.fly_away_first.fly_away {
     /* 用js实现transform */
     transform: translateX(600px) translateY(-400px) translateZ(-5000px) rotateX(66deg) rotateY(-12deg) rotateZ(36deg) scale(0.4);
     transition: all 1.5s linear 0.5s;
     opacity: 0;
 }
+/* 黑洞 */
+.black-hole {
+    position: fixed;
+    top: 20%;
+    left: 40%;
+    width: 0;
+    height: 0;
+    display: inline-block;
+    border-radius: 50%;
+    transition: all 0.5s linear;
+    /* background-color: hsla(hue, saturation, lightness, alpha); */
+    background-color: rgb(0, 0, 0);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.788);
+}
+.black-hole.show {
+    width: 20vw;
+    height: 20vw;
+}
+.black-hole.white {
+    background-color: rgba(255, 255, 255, 0.774);
+    box-shadow: inset 0px 0px 9px rgba(0, 0, 0, 0.473),0px 0px 20px rgba(0, 0, 0, 0.788);
+}
+/* 飞机飞回来 */
+.back-end.fly_away_first.fly_away.return {
+    transform: translateX(600px) translateY(-400px) translateZ(-5000px) rotateX(-120deg) rotateY(0deg) rotateZ(-45deg) scale(0.4);
+    opacity: 1;
+}
+.back-end.fly_away_first.return {
+    transform: rotateX(-120deg) rotateY(0deg) rotateZ(-45deg) scale(0.4);
+}
+
+/* rotateY(180deg) rotateZ(180deg) rotateX(60deg) scale(0.4) */

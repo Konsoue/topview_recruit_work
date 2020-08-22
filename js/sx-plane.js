@@ -6,14 +6,19 @@
 */
 function paperScale() {
   $('.back-end')
-  .removeClass('hidden-back')
-  .animate({
-    transitionDelay: "0.5s",
-  }, 1000, "linear", function(){
-    $('.front-end').hide();
-    $(this).css({transform: "scale(0.4)"});
-    paperCurve();
-  });
+  .removeClass('hidden-back');
+  setTimeout(() => {
+    $('.front-end').removeClass("show-front");
+    $('.back-end')
+    .addClass("small")
+    .animate({
+      transitionDelay: "0.5s",
+    }, 1000, "linear", function(){
+      $(this).addClass("show-back");
+      paperCurve();
+    });
+  }, 2000);
+  
 }
 
 /* 
@@ -25,7 +30,7 @@ function paperCurve() {
   setTimeout(function() {
     $(".fold").addClass("curved");
     paperWait();
-  }, 1500);
+  }, 1000);
 }
 /* 
  *@author: 思贤
@@ -34,11 +39,14 @@ function paperCurve() {
 */
 function paperWait() {
   setTimeout(function() {
-    $('.plane').css("transform","rotateX(54deg) rotateY(-10deg) rotateZ(25deg) scale(0.4)").addClass("hover");
+    $('.plane').addClass("hover");
     setTimeout(function() {
-      $(".plane").css("transform","transform: rotate3d(1, 1, 1, 22deg) scale(0.4)");
-      $(".plane").addClass("fly_away_first").css("transform","translateX(-100px) translateZ(300px) rotateX(42deg) rotateY(-11deg) rotateZ(27deg) scale(0.4)");
-      paperFly();
+      $(".black-hole").addClass("show");
+      // $(".plane").css("transform","rotate3d(60, 0, 36, 63deg) scale(0.5)");
+      $(".plane").addClass("fly_away_first").addClass("fly_away_second");
+      setTimeout(() => {
+        paperFly();
+      }, 500);
     }, 2000);    
   }, 2000);
 }
@@ -50,12 +58,62 @@ function paperWait() {
 
 function paperFly() {
   setTimeout(function() {
-    $(".plane").addClass("fly_away").css("transform","translateX(600px) translateY(-400px) translateZ(-5000px) rotateX(66deg) rotateY(-12deg) rotateZ(36deg) scale(0.4)");
+    $(".plane").addClass("fly_away");
+    setTimeout(() => {
+      planeReturn();
+      // clearClas();
+    }, 2000);
   }, 500);
 }
 
+/* 
+ *@author:思贤
+ *@function: 清除没用的class
+ *@params
+*/
+function clearClas() {
+  $(".plane").removeClass("fly_away_second")
+}
+
+/* 
+ *@author: 思贤
+ *@function: 黑洞变白，飞机返回
+ *@params
+*/
+function planeReturn() {
+  $(".black-hole").addClass("white");
+  $(".plane")
+  .animate({
+    transitionDelay: "0s",
+  })
+  .addClass("return");
+  setTimeout(() => {
+    $(".plane")
+    .show()
+    .removeClass("fly_away")
+    .removeClass("fly_away_second");
+    setTimeout(() => {
+      $(".plane").removeClass("fly_away_first");
+      turnPaper();
+    }, 1500);
+  }, 2000);
+}
+/* 
+ *@author: 思贤
+ *@function: 飞机放平，摊平成纸
+ *@params
+*/
+function turnPaper(){
+  setTimeout(() => {
+    $(".black-hole").removeClass("show");
+    $(".plane").removeClass("return").removeClass("hover");
+    setTimeout(() => {
+      $(".fold").removeClass("curved");
+    }, 1500);
+  }, 1000);
+}
+
 $(".submit").click(function(){
-  $(".front-end").removeClass("show-front");
   paperScale();
 })
 
