@@ -136,12 +136,22 @@ textarea {
   color: #3282b8;
   font-size: 12px;
 }
-/* 思贤部分结束 */
+.warning {
+  display: none;
+  position: fixed;
+  z-index: 35;
+  bottom: 30%;
+  right: 0px;
+  left: 0px;
+  margin: 0 auto;
+  width: 300px;
+  padding: 20px;
+  border-radius: 5px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.596);
+}
 
-  /* left: 4px;
-  color: #3282b8;
-  font-size: 12px;
-}  */
+/* 思贤部分结束 */
 
 
 /*提示语的样式*/

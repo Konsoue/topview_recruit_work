@@ -39,10 +39,10 @@
     ul.form-body-part1 li span {
         display: inline-block;
     }
-    .form-body-part1 .tip,
+    /* .form-body-part1 .tip,
     .form-body-part2 .tip {
       text-indent: 4.5em;
-    }
+    } */
 }
 
 
@@ -64,7 +64,7 @@ body {
     background-color: rgba(0, 0, 0, .25);
 }
 .sx-container {
-    position: fixed;
+    /* position: fixed; */
     width: 100%;
     height: 100%;
     /* margin: 30px auto; */

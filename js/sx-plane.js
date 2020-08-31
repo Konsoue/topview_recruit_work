@@ -113,7 +113,5 @@ function turnPaper(){
   }, 1000);
 }
 
-$(".submit").click(function(){
-  paperScale();
-})
+
 

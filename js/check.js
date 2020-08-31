@@ -14,6 +14,54 @@ let user_data = {
 
 /* 
  *@author: 思贤
+ *@function: 小提示黑窗口
+ *@params: 写入的字符串
+*/
+function showTip(string) {
+  $('.warning').text(string).fadeIn();
+  let timer = setTimeout(()=>{
+    $('.warning').fadeOut();
+    clearTimeout(timer);
+  }, 1500);
+}
+
+/* 
+ *@author: 思贤
+ *@function: 学院和组别的添加
+ *@params
+*/
+function addLi() {
+  // 添加组别
+  $.ajax({
+    url: '/api/admin/getGroupMessage',
+    type: 'get',
+    success: function(data) {
+      // console.log(data);
+      data.data.forEach(function(current){
+        $("#clazz").append("<li data-id=" + current.id + ">" + current.groupName + "</li>");
+      });
+
+    },
+    error: function() {
+      console.log("请求失败");
+    }
+  });
+  // 添加学院
+  // $.ajax({
+  //   url: '',
+  //   type: 'get',
+  //   success: function(data) {
+  //     console.log(data);
+  //   },
+  //   error: function() {
+  //     console.log('请求失败');
+  //   }
+  // })
+}
+addLi();
+
+/* 
+ *@author: 思贤
  *@function: 正则判断姓名
  *@params:
 */
@@ -41,7 +89,7 @@ function checkName() {
  *@params:
 */
 function checkStuId() {
-  let stuIdReg = /^3[1|2]2000\d{4}$/;
+  let stuIdReg = /^3[1|2]\d{8}$/;
   let one = stuIdReg.test($("#student-id").val());
   if (one) {
     $("#studentId_tip").hide();
@@ -73,15 +121,37 @@ function checkPhone() {
  *@params
 */
 function checkClazz() {
-  if ($(this).val()) {
-    $("#grade_tip").hide();
-    user_data.clazz = $(this).val();
+  if ($("#grade-major").val()) {
+    $(".grade_tip").text("例：20计算机类(5)班");
+    user_data.clazz = $("#grade-major").val();
   }else {
-    $("#grade_tip").text("您是究竟何方圣神？").show();
+    $(".grade_tip").text("您是究竟何方圣神？");
   }
 }
 
 
+/* 
+ *@author: 思贤
+ *@function: 发送ajax请求，提交表单给后台
+ *@params
+*/
+function commit() {
+  $.ajax({
+    url: '/api/student/recruit',
+    type: 'POST',
+    data: user_data,
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    success: function(data) {
+      console.log(data);
+      paperScale();
+    },
+    error: function() {
+      console.log('请求失败');
+    }
+  })
+}
   
 //获取表单的元素
 const $qq = $("#qq");
@@ -119,7 +189,7 @@ function introCheck() {
     return false;
   }
   $(".intro_tip").css({ opacity: 0 });
-  user_data.introdution = intro;
+  user_data.introduction = intro;
   return true;
 }
 $introduction.on("blur", introCheck);
@@ -170,7 +240,7 @@ const $academyList = $(".academy_list");
 
 function academySelect() {
   $academyList.show();
-  $academyList.on("click",function (e) {
+  $academyList.off('click').on("click",function (e) {
     const target = e.target;
     const text = target.innerText;
     $(".academy_selected").text(text);
@@ -194,15 +264,17 @@ const $directionList = $(".direction_list");
 
 function directionSelect() {
   $directionList.show();
-  $directionList.on("click",function (e) {
+  $directionList.off('click').on("click",function (e) {
     const target = e.target;
     const text = target.innerText;
     $(".direction_selected").text(text);
+    // 顺便把选中的组别，id给academy_selected
+    user_data.groupId = $(target).data('id');
   })  
 }
 
-$direction.on("mouseenter",directionSelect);
-$direction.on("mouseleave", function () {
+$direction.off('mouseenter').on("mouseenter",directionSelect);
+$direction.off('mouseeleave').on("mouseleave", function () {
   $directionList.hide();
 });    
  
@@ -225,7 +297,7 @@ $("input[name='sex']").change(function(){
 })
 
 $("#grade-major").on("blur",function(){
-  checkClazz.call(this);
+  checkClazz();
 })
 
 
@@ -250,5 +322,30 @@ $input.on("focus",function () {
 $input.on("blur",function () {
   if($(this).val() == '') {
     $(this).siblings('.label').css("top","20%");
+  }
+})
+
+/* 思贤部分开始 */
+/* 提交按钮执行的功能 */
+$('.submit').on('click',function(){
+  let noEmpty = true;
+  for (let i in user_data) {
+    if (user_data[i] === undefined) {
+      noEmpty = false;
+      break;
+    }
+  }
+  console.log(user_data);
+  if (noEmpty) {
+    commit();
+  }else {
+    checkName();
+    checkStuId();
+    checkPhone();
+    checkClazz();
+    qqCheck();
+    impressCheck();
+    introCheck();
+    skillsCheck();
   }
 })
