@@ -98,7 +98,6 @@ function checkStuId() {
     $("#studentId_tip").html("您确定这是广工学号？<img style='width:18px;vertical-align: text-bottom;' src='https://education.topviewclub.cn/file/assert/wangchai.png'>").show();
   }
 }
-
 /* 
  *@author: 思贤
  *@function: 正则判断手机号
@@ -167,10 +166,18 @@ const $impression = $(".impression");
 function qqCheck() {
   let reg = /^[1-9][0-9]{4,10}$/;
   let qq = $qq.val();
-  if (!reg.test(qq) || qq == '') {
+  if(qq != '') {
+    $(this).parent().addClass('input--filled');
+    if(!reg.test(qq) ) {
+      $(".qq_tip").css({ opacity: 1 });
+      return false;
+    }
+  } else if (qq == '') {
+    $(this).parent().attr("class","input-box");
     $(".qq_tip").css({ opacity: 1 });
     return false;
   }
+
   $(".qq_tip").css({ opacity: 0 });
   user_data.qq = qq;
   return true;
@@ -185,8 +192,11 @@ $qq.on("blur", qqCheck);
 function introCheck() {
   let intro = $introduction.val();
   if (intro == '') {
+    $(this).parent().attr("class","textarea-action");
     $(".intro_tip").css({ opacity: 1 });
     return false;
+  } else {
+    $(this).parent().addClass('textarea--filled');
   }
   $(".intro_tip").css({ opacity: 0 });
   user_data.introduction = intro;
@@ -200,10 +210,14 @@ $introduction.on("blur", introCheck);
  *@params
 */
 function skillsCheck() {
+  console.log($(this))
   let skills = $skills.val();
   if (skills == '') {
+    $(this).parent().attr("class","textarea-action");
     $(".skills_tip").css({ opacity: 1 });
     return false;
+  } else {
+    $(this).parent().addClass('textarea--filled');
   }
   $(".skills_tip").css({ opacity: 0 });
   user_data.skills = skills;
@@ -218,9 +232,12 @@ $skills.on("blur", skillsCheck);
 */
 function impressCheck() {
   let impression = $impression.val();
-  if (impression == '') {
+    $(this).parent().attr("class","textarea-action");
+    if (impression == '') {
     $(".impress_tip").css({ opacity: 1 });
     return false;
+  } else {
+    $(this).parent().addClass('textarea--filled');
   }
   $(".impress_tip").css({ opacity: 0 });
   user_data.impression = impression;
@@ -281,14 +298,29 @@ $direction.off('mouseeleave').on("mouseleave", function () {
 
 // 思贤部分开始
 $("#username").on('blur',function(){
+  if($(this).val() != '') {
+    $(this).parent().addClass('input--filled');
+  } else {
+    $(this).parent().attr("class","input-box");
+  }
   checkName();
 })
 
 $("#student-id").on('blur',function(){
+  if($(this).val() != '') {
+    $(this).parent().addClass('input--filled');
+  } else {
+    $(this).parent().attr("class","input-box");
+  }
   checkStuId();
 })
 
 $("#phone").on("blur",function(){
+  if($(this).val() != '') {
+    $(this).parent().addClass('input--filled');
+  } else {
+    $(this).parent().attr("class","input-box");
+  }
   checkPhone();
 })
 
@@ -297,6 +329,11 @@ $("input[name='sex']").change(function(){
 })
 
 $("#grade-major").on("blur",function(){
+  if($(this).val() != '') {
+    $(this).parent().addClass('input--filled');
+  } else {
+    $(this).parent().attr("class","input-box");
+  }
   checkClazz();
 })
 
