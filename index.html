@@ -31,19 +31,23 @@
                       <span class="input-label-content ">姓名：</span>
                     </label>
                   </span>
-                  <!--span class="label">姓名：</!--span>
-                  <input type="text" id="username" autocomplete="off"-->
                   <p class="tip" id="name_tip">Lorem ipsum dolor sit.</p>
                 </label>  
               </li>
               <li class="sex">
-                <div class="sex_wrapper">
-                  <span>
+                <!--div class="sex_wrapper"-->
+                  <!--span>
                     <label>性别</label>
-                  </span>
-                  <label><input type="radio" name="sex" value="0" id="male">男生</label>
-                  <label><input type="radio" name="sex" value="1" id="female">女生</label>
-                </div>
+                  </!--span-->
+                  <label>
+                    <input  type="radio" name="sex" value="0" id="male">
+                    <span class="iconfont" for='male' title="BOY">&#xe8b3</span>
+                  </label>
+                  <label>
+                    <input  type="radio" name="sex" value="1" id="female">
+                    <span class="iconfont" for="female" title="GIRL">&#xe8b4</span> 
+                  </label>
+                <!--/div-->
               </li>
               <li>
                 <span class="input-box">
@@ -52,17 +56,9 @@
                     <span class="input-label-content ">学号：</span>
                   </label>
                 </span>
-                <!--span class="label">
-                  <label for="student-id">学号：</label>
-                </span>
-                <input type="text" id="student-id"-->
                 <p class="tip" id="studentId_tip">Lorem ipsum dolor sit.</p>
               </li>
               <li>
-                <!--span class="label">
-                  <label for="grade-major">年级专业</label>
-                </!--span>
-                <input type="text" id="grade-major"autocomplete="off"-->
                 <span class="input-box">
                   <input class="input-base " id="grade-major" type="text" autocomplete="off"/>
                   <label class="input-label input-label-color-3" for="grade-major">
@@ -72,19 +68,15 @@
                 <p class="grade_tip">例：20计算机类(5)班</p>
               </li>
               <li>
-                <!--span class="label">
-                  <label for="grade-major">手机号码</label>
-                </！span>
-                <input type="text" id="phone"autocomplete="off"-->
                 <span class="input-box">
                   <input class="input-base " id="phone" type="text" autocomplete="off"/>
-                  <label class="input-label input-label-color-1" for="phone">
+                  <label class="input-label input-label-color-4" for="phone">
                     <span class="input-label-content ">手机号码：</span>
                   </label>
                 </span>
                 <p class="tip" id="phone_tip">Lorem ipsum dolor sit.</p>
               </li>
-              <li>
+              <li class="academy-box">
                 <div class="academy">
                   <div class="academy_selected">请选择所在学院</div>
                   <span class="academy_down"></span>
@@ -98,19 +90,15 @@
                 </div>
               </li>
               <li>
-                <!--span class="label">
-                  <label for="qq">QQ：</label>
-                </!--span>
-                <input type="text" id="qq" autocomplete="off"-->
                 <span class="input-box">
                   <input class="input-base " id="qq" type="text" autocomplete="off"/>
-                  <label class="input-label input-label-color-2" for="qq">
+                  <label class="input-label input-label-color-5" for="qq">
                     <span class="input-label-content ">QQ：</span>
                   </label>
                 </span>
                 <p class="qq_tip notice">不是吧阿Sir，QQ号都不会写?</p>
               </li>
-              <li>
+              <li class="direction-box">
                 <div class="direction">
                   <div class="direction_selected">请选择意向组别</div>
                   <span class="direction_down"></span>
@@ -133,11 +121,6 @@
                     <span class="textarea-label-content ">自我介绍（性格、兴趣、爱好等）:</span>
                   </label>
                 </span>
-
-                <!--p>
-                  <label class="textarea_label">自我介绍（性格、兴趣、爱好等）</label>
-                </!--p>
-                <textarea-- class="introduction" placeholder="限1000字内" maxlength="1000"></textarea-->
                 <p class="intro_tip notice">不管是开朗活泼，还是文静内秀，我们都喜欢哟！</p>
               </li>
               <li>
@@ -147,10 +130,6 @@
                     <span class="textarea-label-content ">技术技能:</span>
                   </label>
                 </span>
-                <!--p>
-                  <label class="textarea_label">技术技能</label>
-                </!--p>
-                <textarea-- class="skills" placeholder="限1000字内" maxlength="1000"></textarea-->
                 <p class="skills_tip notice">要清楚自己的优势噢，实在不行就吹吹水嘛~</p>
               </li>
               <li>
@@ -160,10 +139,6 @@
                     <span class="textarea-label-content ">对我们工作室得了解:</span>
                   </label>
                 </span>
-                <!--p>
-                  <label class="textarea_label">对我们工作室的了解</label>
-                </！p>
-                <textarea-- class="impression" placeholder="限1000字内" maxlength="1000"></textarea-->
                 <p class="impress_tip notice">考验你吹水能力的时候到了，冲冲冲！</p>
               </li>
             </ul>

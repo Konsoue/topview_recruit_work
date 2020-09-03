@@ -326,6 +326,26 @@ $("#phone").on("blur",function(){
 
 $("input[name='sex']").change(function(){
   user_data.sex = $(this).val();
+  $('.iconfont').css({
+    'color':'#fff',
+    'font-size': '50px',
+    'text-shadow': 'none',
+  });
+  if(user_data.sex == 0) {
+    $(this).next().css({
+      'color':'#2fa8ec',
+      'font-size': '70px',
+      'text-shadow': '0px 0px 12px #2fa8ec',
+    });
+  } else {
+    $(this).next().css({
+      'color':'#ec2f58',
+      'font-size': '70px',
+      'text-shadow': '0px 0px 12px #ec2f58',
+
+    });
+  }
+  
 })
 
 $("#grade-major").on("blur",function(){

@@ -1,3 +1,7 @@
+/*
+ @author: 创境
+---- input样式与动画------
+*/
 .input-box {
   padding-top: 40px;
   overflow: hidden;
@@ -95,6 +99,14 @@
   border-color: hsl(20, 100%, 50%);
 }
 
+.input-label-color-4::after {
+  border-color: hsl(80, 100%, 50%);
+}
+
+.input-label-color-5::after {
+  border-color: hsl(300, 100%, 50%);
+}
+
 @-webkit-keyframes anim-1 {
   50% {
     opacity: 0;
@@ -131,8 +143,10 @@
   }
 }
 
-
-/*input样式*/
+/*
+ @author: 创境
+----textarea样式与动画------
+*/
 .textarea-action {
   margin-top: 35px;
   position: relative;
@@ -145,7 +159,7 @@
 .textarea-base {
   font-size: 20px;
   width: 100%;
-  padding: 10px 10px;
+  padding: 20px 10px 10px;
   box-sizing: border-box;
   position: relative;
   display: block;
@@ -246,4 +260,86 @@
   transition-delay: 0.3s;
   -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
   transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+/*
+ @author: 创境
+---- 单选框样式与动画------
+*/
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1599116744358'); /* IE9 */
+  src: url('iconfont.eot?t=1599116744358#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAANoAAsAAAAABzAAAAMcAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCCfgqCJIIxATYCJAMMCwgABCAFhG0HMhtrBsg+QCY39QMntNEYM2NCi7D3ZGv7XjwI7OBzg+dxrL2/7VSgiVg1qSRIZhLx0FUqoUBIlj3kW1zLPrIwcU9jCcS666UH3MuAhCGSY6Pn5Hz6U9/PWiCJxXKheABjsa2xzsG9CLUgY3Gp1/M/QAraBggwQ98IC4vd0gv1GWp1za2ABFpWFAT8xC9WA0g31C/Af5+4d/pHnQc2H1Auc4zzMQETDGhv/BRZgSToDWMXtMTnEMBJrGxSPb+6y7IYzHUCyKCpc5bN2DANzYIdwVpx1ED2TMWuDnoBdoPvy68kAygsGubW+s1pbPL3/2D1KD3C5NN5AHYKNJANDEhDpa9eIspl0zjVXJJkbGuewNfj8nX3ZJv9wwNBgVhhNroBSIdadUVyR8elySEDFAAaACtggCaMA2gKD71GJTqhs85f99q5y9VXFEclt4jkfwyU7nK+L8RBz9LSlyiSfJwxQcrEkWYvq8GAitUTpxOrkj1aJhlsbDt78PbAqwW18nsB17nCr5WnpvkQTU7GX9/njSM8ias+hre8qmTY/H9wFf9ONRc//z7OU85PqCt+Tvz28VXxd9SqdvZ+R1titEDtaOn9PFfpLSb3FGtl4StlmJmyt5zYg6vBuI01g1SSqAegGM6mxYDICX9QKFGe6P6N3/Cklm4qo39UAPA2e31hJFKSbgGwn69f4N3LOw4YTWnatVFkjswIaPIGehTAJicQYYaCPocbojo3gmAnKoHCRgw0dpJJw86GBRfFsGKnDE6y1J12ETIugRgTkGkLQPC7hsLLMzR+r6Rhf8BCtH9Y8SfDSUONK12k1uVnFHJCDQ7PwBS+J20n5cPmbdSPHK7SyoC7jyoykzDYN5AvLqCHaood0bE+RCRBKt+FefAaOo4PgfItFNRnEAXD/f2y6k19wndZnioK4gjSgHZnQB/B55HeeJIvfH4b0h1xcKqhpSq6DykRc3JQIFd+B3JB53VquRUmE47phkwiEuim+FygFixCDocPjFYvsiCB9OkdkAkMy7NGdXfV9S1vcF+glHVg7tciEZko0MPci3vHjAE=') format('woff2'),
+  url('iconfont.woff?t=1599116744358') format('woff'),
+  url('iconfont.ttf?t=1599116744358') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1599116744358#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 50px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  cursor: pointer;
+  color: #ffffff;
+  border-radius: 5px;
+  /*border: 1px solid #6a7989;
+  padding: 5px;*/
+
+  transition: all 0.3s;
+  background-color: none;
+}
+
+.sex label {
+  margin: 0 30px 0;
+}
+
+.iconfont[title='BOY']:hover {
+  transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  text-shadow: 0px 0px 12px #2fa8ec !important;
+  color: cornflowerblue !important;
+}
+
+.iconfont[title='GIRL']:hover {
+  transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  text-shadow: 0px 0px 12px #ec2f58 !important;
+  color: palevioletred !important;
+}
+
+/*
+ @author: 创境
+---- 下拉框样式与动画------
+*/
+.academy-box,
+.direction-box {
+  padding-top: 40px;
+}
+
+/*淡入动画*/
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/*
+ @author: 创境
+---- 多选框提示语------
+*/
+.skills_tip,
+.intro_tip,
+.impress_tip {
+  position: absolute;
+  bottom: 60px;
 }
